@@ -10,6 +10,7 @@ This project implements an Audio Language Model (ALM) capable of simultaneously 
 - Paralinguistic Analysis (emotion, tone, hesitation)
 - Audio Event Detection (car honking, dog barking, aircraft sounds, etc.)
 - Joint understanding of speech and non-speech elements for complex reasoning
+- Web interface for easy access and deployment
 
 ## Project Structure
 ```
@@ -30,7 +31,12 @@ This project implements an Audio Language Model (ALM) capable of simultaneously 
 │   └── evaluation.py
 ├── config/
 │   └── config.yaml
-└── main.py
+├── templates/
+│   └── index.html
+├── main.py
+├── web_app.py
+├── deploy.py
+└── requirements.txt
 ```
 
 ## Requirements
@@ -41,4 +47,95 @@ This project implements an Audio Language Model (ALM) capable of simultaneously 
 - SoundFile
 - NumPy
 - Pandas
+- Flask
+- Gunicorn
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/Akshay-Notfound/Deep-Learning-based-ALM.git
+   cd Deep-Learning-based-ALM
+   ```
+
+2. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. (Optional) Initialize the project with sample data:
+   ```
+   python init_project.py
+   ```
+
+## Web Interface
+
+The project includes a web interface built with Flask for easy access to the ALM functionality.
+
+To run the web interface locally:
+
+1. Start the web application:
+   ```
+   python web_app.py
+   ```
+
+2. Open your browser and navigate to `http://localhost:5000`
+
+## Deployment
+
+### Development Mode
+
+To run the application in development mode:
+
+```
+python deploy.py --mode dev
+```
+
+### Production Mode
+
+To create production deployment scripts:
+
+```
+python deploy.py --mode prod
+```
+
+This will generate `deploy.sh` (for Linux/Mac) and `deploy.bat` (for Windows) files that can be used to deploy the application in a production environment.
+
+### Manual Production Deployment
+
+For manual deployment, you can use Gunicorn:
+
+```
+gunicorn --bind 0.0.0.0:8000 --workers 4 web_app:app
+```
+
+## Usage
+
+### Command Line Interface
+
+Run the ALM system from the command line:
+
+```
+python main.py --config config/config.yaml --checkpoint path/to/checkpoint.pt --audio path/to/audio.wav
+```
+
+### Web Interface
+
+1. Upload an audio file using the web interface
+2. Optionally, ask a question about the audio content
+3. View the analysis results including speech recognition, audio events, speaker diarization, and paralinguistic analysis
+
+## API Endpoints
+
+- `GET /` - Main web interface
+- `POST /analyze` - Analyze an uploaded audio file
+- `GET /api/status` - Check API status
+
+## Demo
+
+Run the demo to see a simulation of the ALM capabilities without requiring heavy dependencies:
+
+```
+python alm_demo.py
+```
 ```
