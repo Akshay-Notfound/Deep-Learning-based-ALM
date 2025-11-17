@@ -3,6 +3,8 @@
 ## Overview
 This project implements an Audio Language Model (ALM) capable of simultaneously recognizing and jointly understanding speech and non-speech audio elements with reasoning capabilities.
 
+**Developed by: Akshay Rathod**
+
 ## Features
 - Speech Recognition for Asian languages (Mandarin, Urdu, Hindi, Telugu, Tamil, Bangla) and English
 - Non-Speech Audio Understanding (music, alarms, environmental noises)
@@ -142,6 +144,22 @@ python alm_demo.py
 ## Streamlit Web Interface
 
 The project also includes a Streamlit web interface for easy access to the ALM functionality.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Developer
+
+**Akshay Rathod** - Final Year Project
+
+## Copyright and Disclaimer
+
+Copyright (c) 2025 Akshay Rathod. All rights reserved.
+
+This Audio Language Model (ALM) system is provided "as is" without warranty of any kind, either express or implied. The developer makes no representations or warranties regarding the accuracy, reliability, or suitability of the system for any purpose. Use of this system is at your own risk.
+
+In no event shall the developer be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of the use or inability to use this system.
 
 To run the Streamlit interface:
 
