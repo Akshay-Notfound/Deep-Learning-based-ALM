@@ -145,9 +145,9 @@ The project also includes a Streamlit web interface for easy access to the ALM f
 
 To run the Streamlit interface:
 
-1. Install Streamlit:
+1. Install the required dependencies:
    ```
-   pip install streamlit
+   pip install streamlit librosa
    ```
 
 2. Run the Streamlit app:
@@ -155,12 +155,17 @@ To run the Streamlit interface:
    streamlit run streamlit_app.py
    ```
 
-3. The app will open in your default browser at `http://localhost:8501`
+3. If the `streamlit` command is not found, try:
+   ```
+   python -m streamlit run streamlit_app.py
+   ```
 
-If the `streamlit` command is not found, try:
-```
-python -m streamlit run streamlit_app.py
-```
+4. On Windows, you might need to specify Python 3.10 explicitly:
+   ```
+   py -3.10 -m streamlit run streamlit_app.py
+   ```
+
+5. The app will open in your default browser at `http://localhost:8501`
 
 The Streamlit interface provides:
 - File upload for audio analysis
