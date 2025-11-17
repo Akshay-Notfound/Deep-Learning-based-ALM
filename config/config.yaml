@@ -1,0 +1,42 @@
+# ALM Model Configuration
+
+# Data Configuration
+data:
+  sample_rate: 16000
+  n_fft: 400
+  hop_length: 160
+  n_mels: 80
+  max_audio_length: 30  # seconds
+  languages: ['english', 'mandarin', 'urdu', 'hindi', 'telugu', 'tamil', 'bangla']
+
+# Model Configuration
+model:
+  speech_encoder:
+    hidden_size: 768
+    num_layers: 12
+    dropout: 0.1
+  
+  audio_encoder:
+    hidden_size: 768
+    num_layers: 6
+    dropout: 0.1
+    
+  fusion_module:
+    hidden_size: 1024
+    num_heads: 8
+    num_layers: 6
+    
+  output_dims:
+    speech_recognition: 50000  # Vocabulary size
+    audio_events: 100  # Number of audio event classes
+    speaker_diarization: 10   # Max number of speakers
+    paralinguistics: 20       # Emotion/tone categories
+
+# Training Configuration
+training:
+  batch_size: 16
+  learning_rate: 0.0001
+  num_epochs: 100
+  warmup_steps: 1000
+  gradient_clip: 1.0
+  save_checkpoint_every: 5
