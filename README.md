@@ -138,4 +138,33 @@ Run the demo to see a simulation of the ALM capabilities without requiring heavy
 ```
 python alm_demo.py
 ```
+
+## Streamlit Web Interface
+
+The project also includes a Streamlit web interface for easy access to the ALM functionality.
+
+To run the Streamlit interface:
+
+1. Install Streamlit:
+   ```
+   pip install streamlit
+   ```
+
+2. Run the Streamlit app:
+   ```
+   streamlit run streamlit_app.py
+   ```
+
+3. The app will open in your default browser at `http://localhost:8501`
+
+If the `streamlit` command is not found, try:
+```
+python -m streamlit run streamlit_app.py
+```
+
+The Streamlit interface provides:
+- File upload for audio analysis
+- Question answering about audio content
+- Visual results display
+- Demo mode to see sample outputs
 ```
