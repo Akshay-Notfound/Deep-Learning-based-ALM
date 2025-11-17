@@ -238,10 +238,10 @@ st.markdown("""
 <div class='header'>
     <h1>🔊 Audio Language Model (ALM)</h1>
     <p style='font-size: 1.2rem; max-width: 800px; margin: 0 auto;'>Advanced audio analysis with speech recognition, event detection, and more</p>
-    <div style='margin-top: 1rem; display: flex; justify-content: center; gap: 2rem;'>
-        <div style='background: rgba(77, 171, 247, 0.2); padding: 0.5rem 1rem; border-radius: 50px;'>Multilingual Support</div>
-        <div style='background: rgba(59, 201, 219, 0.2); padding: 0.5rem 1rem; border-radius: 50px;'>Real-time Analysis</div>
-        <div style='background: rgba(119, 159, 247, 0.2); padding: 0.5rem 1rem; border-radius: 50px;'>AI Powered</div>
+    <div style='display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;'>
+        <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>Multilingual</span>
+        <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>AI Powered</span>
+        <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>Real-time</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -514,33 +514,37 @@ with st.expander("Click to run a sample analysis", expanded=False):
 
 # Footer
 st.markdown("---")
+
+# Simple footer without complex HTML
 st.markdown("""
 <div class='footer'>
     <p>Audio Language Model (ALM) System © 2025</p>
     <p style='font-size: 0.8rem; margin-top: 0.5rem;'>Advanced audio analysis with speech recognition, event detection, and more</p>
     <p style='font-size: 0.7rem; margin-top: 1rem; color: rgba(255, 255, 255, 0.6);'>Developed by Akshay Rathod</p>
+</div>
+""", unsafe_allow_html=True)
+
+# Legal information in a simple expander
+with st.expander("Legal Information", expanded=False):
+    st.markdown("""
+    **Copyright Notice:**
+    © 2025 Akshay Rathod. All rights reserved.
     
-    <div style='display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;'>
-        <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>Multilingual</span>
-        <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>AI Powered</span>
-        <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>Real-time</span>
-    </div>
+    **Disclaimer:**
+    This Audio Language Model (ALM) system is provided "as is" without warranty of any kind, either express or implied. The developer makes no representations or warranties regarding the accuracy, reliability, or suitability of the system for any purpose. Use of this system is at your own risk.
     
-    <details style='margin-top: 2rem; font-size: 0.7rem;'>
-        <summary style='color: rgba(255, 255, 255, 0.7); cursor: pointer;'>Legal Information</summary>
-        <div style='margin-top: 1rem; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;'>
-            <p><strong>Copyright Notice:</strong></p>
-            <p>© 2025 Akshay Rathod. All rights reserved.</p>
-            
-            <p><strong>Disclaimer:</strong></p>
-            <p>This Audio Language Model (ALM) system is provided "as is" without warranty of any kind, either express or implied. The developer makes no representations or warranties regarding the accuracy, reliability, or suitability of the system for any purpose. Use of this system is at your own risk.</p>
-            
-            <p><strong>License:</strong></p>
-            <p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
-            
-            <p><strong>Limitation of Liability:</strong></p>
-            <p>In no event shall the developer be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of the use or inability to use this system.</p>
-        </div>
-    </details>
+    **License:**
+    This project is licensed under the MIT License - see the LICENSE file for details.
+    
+    **Limitation of Liability:**
+    In no event shall the developer be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of the use or inability to use this system.
+    """)
+
+# Badges section
+st.markdown("""
+<div style='display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;'>
+    <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>Multilingual</span>
+    <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>AI Powered</span>
+    <span style='background: rgba(255, 255, 255, 0.1); padding: 0.3rem 1rem; border-radius: 20px;'>Real-time</span>
 </div>
 """, unsafe_allow_html=True)
