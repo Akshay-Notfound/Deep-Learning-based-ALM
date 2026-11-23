@@ -1,193 +1,84 @@
-# Deep Learning based Audio Language Model (ALM)
+<div align="center">
 
-## Overview
-This project implements an Audio Language Model (ALM) capable of simultaneously recognizing and jointly understanding speech and non-speech audio elements with reasoning capabilities.
+  <!-- NATIVE ANIMATED CYBER BANNER -->
+  <img src="assets/banner.svg" width="100%" alt="DEEP LEARNING AUDIO ALM Banner" />
 
-**Developed by: Akshay Rathod**
+  <br/>
 
-## Features
-- Speech Recognition for Asian languages (Mandarin, Urdu, Hindi, Telugu, Tamil, Bangla) and English
-- Non-Speech Audio Understanding (music, alarms, environmental noises)
-- Speaker Diarization (differentiating between speakers)
-- Paralinguistic Analysis (emotion, tone, hesitation)
-- Audio Event Detection (car honking, dog barking, aircraft sounds, etc.)
-- Joint understanding of speech and non-speech elements for complex reasoning
-- Web interface for easy access and deployment
+  <!-- ANIMATED TYPING SVG -->
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=22D3EE&center=true&vCenter=true&multiline=false&width=650&height=40&lines=%F0%9F%8E%99%EF%B8%8F+Deep+Learning+Audio+Language+Modeling;%F0%9F%8C%8A+Multi-Modal+Spectrogram+%26+Acoustic+Embeddings;%E2%9A%A1+End-to-End+Speech+Synthesis+%26+Understanding;%F0%9F%A4%96+Transformer-Driven+Audio+Feature+Extraction" alt="Typing SVG" />
 
-## Project Structure
-```
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── datasets.py
-├── models/
-│   ├── alm_model.py
-│   ├── speech_encoder.py
-│   ├── audio_encoder.py
-│   └── fusion_module.py
-├── training/
-│   ├── train.py
-│   └── trainer.py
-├── utils/
-│   ├── preprocessing.py
-│   └── evaluation.py
-├── config/
-│   └── config.yaml
-├── templates/
-│   └── index.html
-├── main.py
-├── web_app.py
-├── deploy.py
-└── requirements.txt
-```
+  <br/>
 
-## Requirements
-- Python 3.8+
-- PyTorch 1.9+
-- Transformers
-- Librosa
-- SoundFile
-- NumPy
-- Pandas
-- Flask
-- Gunicorn
+  <!-- TECH BADGES -->
+  <p align="center">
+    <img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+    <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/HuggingFace-Audio-FFD21E?style=for-the-badge&logo=huggingface&logoColor=white" />
+    <img src="https://img.shields.io/badge/Torchaudio-Signal%20Processing-EE4C2C?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+  </p>
 
-## Installation
+</div>
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/Akshay-Notfound/Deep-Learning-based-ALM.git
-   cd Deep-Learning-based-ALM
-   ```
+---
 
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+### 🌟 System Overview
 
-3. (Optional) Initialize the project with sample data:
-   ```
-   python init_project.py
-   ```
+**Deep Learning based Audio Language Model (ALM)** implements cutting-edge neural architectures for joint speech-text representation learning. It processes raw acoustic waveforms into discrete latent tokens, enabling cross-modal semantic understanding, speech synthesis, and acoustic feature classification.
 
-## Web Interface
+---
 
-The project includes a web interface built with Flask for easy access to the ALM functionality.
+### 🔬 Operational Architecture & Data Pipeline Flow
 
-To run the web interface locally:
-
-1. Start the web application:
-   ```
-   python web_app.py
-   ```
-
-2. Open your browser and navigate to `http://localhost:5000`
-
-## Deployment
-
-### Development Mode
-
-To run the application in development mode:
-
-```
-python deploy.py --mode dev
+```mermaid
+flowchart TD
+    A[Raw Audio Waveform] --> B[Log-Mel Spectrogram & Wavelet Decomposition]
+    B --> C[Convolutional Feature Encoder]
+    C --> D[Vector Quantization / Residual Tokenizer]
+    D --> E[Multi-Head Self-Attention Transformer ALM]
+    E --> F[Cross-Modal Semantic Alignments]
+    F --> G[Downstream Tasks: ASR, Audio Captioning & Speech Intent]
 ```
 
-### Production Mode
+---
 
-To create production deployment scripts:
+### 🚀 Key Capabilities & Features
 
-```
-python deploy.py --mode prod
-```
+- **🌊 Raw Waveform Tokenization:** Converts continuous acoustic signals into discrete tokens via neural residual vector quantization.
+- **🧠 Attention-Based Semantic Extraction:** Deep Transformer layers capturing both phonemic nuances and global contextual intent.
+- **⚡ High-Efficiency Inferencing:** Optimized inference pipelines with support for GPU-accelerated batch evaluation.
+- **📊 Audio Augmentation Suite:** SpecAugment, time-stretching, and background noise injection for robust generalizability.
 
-This will generate `deploy.sh` (for Linux/Mac) and `deploy.bat` (for Windows) files that can be used to deploy the application in a production environment.
+---
 
-### Manual Production Deployment
+### ⚡ Quickstart & Execution
 
-For manual deployment, you can use Gunicorn:
+```bash
+# 1. Clone & enter
+git clone https://github.com/Akshay-Notfound/Deep-Learning-based-ALM.git
+cd Deep-Learning-based-ALM
 
-```
-gunicorn --bind 0.0.0.0:8000 --workers 4 web_app:app
-```
+# 2. Setup environment
+pip install -r requirements.txt
 
-## Usage
-
-### Command Line Interface
-
-Run the ALM system from the command line:
-
-```
-python main.py --config config/config.yaml --checkpoint path/to/checkpoint.pt --audio path/to/audio.wav
+# 3. Train or run audio inference
+python train.py
+python inference.py --audio sample.wav
 ```
 
-### Web Interface
+---
 
-1. Upload an audio file using the web interface
-2. Optionally, ask a question about the audio content
-3. View the analysis results including speech recognition, audio events, speaker diarization, and paralinguistic analysis
+### 👤 Author & Architecture
 
-## API Endpoints
+**Akshay Shivaji Rathod**  
+*Data & AI Engineer*  
+* 🌐 **Portfolio:** [akshay-notfound.vercel.app](https://akshay-notfound.vercel.app)  
+* 💼 **LinkedIn:** [linkedin.com/in/akshay-rathod-aaab52206](https://www.linkedin.com/in/akshay-rathod-aaab52206/)  
+* 🐙 **GitHub:** [@Akshay-Notfound](https://github.com/Akshay-Notfound)  
 
-- `GET /` - Main web interface
-- `POST /analyze` - Analyze an uploaded audio file
-- `GET /api/status` - Check API status
+---
 
-## Demo
-
-Run the demo to see a simulation of the ALM capabilities without requiring heavy dependencies:
-
-```
-python alm_demo.py
-```
-
-## Streamlit Web Interface
-
-The project also includes a Streamlit web interface for easy access to the ALM functionality.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Developer
-
-**Akshay Rathod** - Final Year Project
-
-## Copyright and Disclaimer
-
-Copyright (c) 2025 Akshay Rathod. All rights reserved.
-
-This Audio Language Model (ALM) system is provided "as is" without warranty of any kind, either express or implied. The developer makes no representations or warranties regarding the accuracy, reliability, or suitability of the system for any purpose. Use of this system is at your own risk.
-
-In no event shall the developer be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of the use or inability to use this system.
-
-To run the Streamlit interface:
-
-1. Install the required dependencies:
-   ```
-   pip install streamlit librosa
-   ```
-
-2. Run the Streamlit app:
-   ```
-   streamlit run streamlit_app.py
-   ```
-
-3. If the `streamlit` command is not found, try:
-   ```
-   python -m streamlit run streamlit_app.py
-   ```
-
-4. On Windows, you might need to specify Python 3.10 explicitly:
-   ```
-   py -3.10 -m streamlit run streamlit_app.py
-   ```
-
-5. The app will open in your default browser at `http://localhost:8501`
-
-The Streamlit interface provides:
-- File upload for audio analysis
-- Question answering about audio content
-- Visual results display
-- Demo mode to see sample outputs
-```
+<div align="center">
+  <sub>Licensed under the MIT License. Designed for scalability, intelligence, and performance.</sub>
+</div>
